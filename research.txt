@@ -1,0 +1,377 @@
+
+Development and Evaluation of GeneSys: A Digital Game-Based Learning Module for Enhancing Students’ Understanding of General Biology Concepts
+
+ 
+A Research Paper
+Submitted to the English Department
+Puerto Galera National High School
+Puerto Galera, Oriental Mindoro
+
+
+
+
+In Partial Fulfillment of the
+Requirements for the Subject
+Practical Research 2
+
+
+
+
+By
+
+Ceniza, Carl John D. 
+Bacay, Hannah D. 
+Como, Anne Loraine R. 
+Delos Santos, Shane L.
+Sandoval, Jeny Jane F. 
+Vinas, Sophia Phoemela M. 
+
+
+
+
+
+
+
+
+
+October 2025
+
+
+
+ 
+TABLE OF CONTENTS
+
+I. PROBLEM AND ITS BACKGROUND
+	Introduction...................................................................................................…1-4
+	Statement of the Problem...........................................................................…..4
+Statement of the Hypothesis……………………………………………………….5
+	Scope and Delimitation ........................................................................…........5-6
+	Significance of the Study.......................................................................…........6-7
+	Conceptual Framework..........................................................................….......8-9
+	Definition of Terms...................................................................................….....9
+ II. REVIEW OF RELATED LITERATURE AND STUDIES
+	Related Literature..................................................................................…......10-14
+	Synthesis of the Review of Related Literature…………………………………..14-15
+ III. METHODOLOGY
+	Research Design............................................................................................16-17
+	Research Locale....................................................................................….....17-18
+ 	Sample and Sampling Technique...................................................................18-19
+	Research Instrument...............................................................................…....19-26
+	Data Gathering Procedure..............................................................................26-27
+	Statistical Treatment.......................................................................................27-39
+
+References................................................................................................................30-35
+ 
+CHAPTER 1
+THE PROBLEM AND ITS SETTING
+INTRODUCTION
+Biology, the natural science concerned with the study of life and living organisms, encompasses their structure, function, growth, evolution, distribution, and taxonomy. Despite its broad scope, biology is unified by core concepts such as the cell as the basic unit of life, heredity through genes, evolution, energy transformation, and homeostasis (LibreTexts, 2022). Fields including molecular biology, genetics, ecology, physiology, evolutionary biology, and anatomy collectively explore life’s complexity, origin, and diversity. Traditional pedagogies such as lectures and textbook-based instruction frequently fail to address diverse learning needs, especially in the Philippine senior high school context.
+
+In recent years, educational technology has played an increasingly significant role in enhancing classroom instruction. Among these innovations, game-based learning has emerged as an effective approach to engaging students and promoting active learning, particularly in science, technology, engineering, and mathematics (STEM) education. General Biology, a core subject under STEM, presents abstract and complex topics, such as cell division, genetics, and ecological systems that often challenge students' understanding. As a response, many educators and developers have begun integrating digital tools and interactive modules to support students’ mastery of key biological concepts.
+Despite the rise of educational games and digital learning platforms, there remains a gap in context-specific and subject-focused game-based tools tailored for General Biology in the Philippine senior high school setting. According to Ang et al. (2025), game-based learning (GBL) is an instructional strategy that integrates games and technology to create interactive and engaging learning experiences. Their study demonstrated that GBL can significantly improve students’ understanding of science concepts, highlighting its potential as an effective tool for enhancing academic achievement in biology education. Traditional methods such as lectures and textbook-based instruction may fall short in capturing student interest or addressing individual learning needs. Moreover, local studies exploring the development and impact of interactive biology modules remain limited, highlighting the need for innovative resources that align with the K–12 curriculum and Filipino students' learning styles. 
+
+Recent systematic reviews, such as that by Pramana et al. (2024), have shown a steady increase and effectiveness of digital game-based learning (DGBL) in biology education at all instructional levels. DGBL not only enhances content mastery but also fosters 21st-century skills like problem-solving and collaboration. Anastasiadis, Lampropoulos, and Siakas (2018) highlight that digital game-based learning platforms improve students’ vocabulary, memory, and understanding through immediate feedback and safe environments for practice. Chang et al. (2024) discusses how biological education has experienced a surge of interest in digital games, allowing students to experience biology in a more interactive way. The interactive approach to learning is encouraging for students in terms of learning complex concepts, improving student engagement in biology, and deepening student understanding of biological ideas. Educational games designed with technology, allow students to have engaging immersion. By focusing on the principles of game design, educators can create learning environments that apply gamification and accommodate student learning styles.
+
+In the Philippine context, there remains a need for more culturally relevant and locally contextualized digital learning platforms. Lim and Rivera (2025) emphasize the importance of integrating local biological examples and contexts within game-based tools to boost relatability and cognitive engagement among Filipino students. Santos et al. (2024) further demonstrate that interactive simulations in biology education enhance critical thinking and problem-solving—competencies essential for scientific literacy.
+
+This study aims to develop and evaluate GeneSys, an interactive game-based learning module designed to enhance students’ conceptual understanding and engagement in General Biology. By integrating educational games with curriculum-based content, GeneSys seeks to provide an alternative learning tool that fosters motivation, improves academic performance, and supports essential 21st-century skills. The results of this research may offer valuable insights into the effectiveness of game-based instruction and its potential as a complementary strategy for science education in the Philippine senior high school setting.
+
+STATEMENT OF THE PROBLEM
+	This study aims to develop and evaluate “GeneSys”, a game-based learning module designed to enhance students’ understanding of General Biology concepts. 
+The study also aims to assess the usability and educational value of the module as perceived by students, with the goal of providing an innovative and interactive supplement to traditional classroom instruction.
+	Specifically, it seeks to answer the following questions:
+
+1.	What is the level of students’ performance before the implementation of the GeneSys digital game-based learning module in terms of:
+1.1. critical thinking skills;
+1.2 knowledge retention;
+1.3 learning efficacy; and
+1.4 mastery of concepts?
+
+2. What is the level of students’ performance after the implementation of the GeneSys digital game-based learning module in terms of:
+2.1 critical thinking skills;
+2.2 knowledge retention;
+2.3 learning efficacy; and
+2.4 mastery of concepts?
+
+3. Is there a significant difference between the students’ performance before and after the implementation of the GeneSys digital game-based learning module?
+
+4. What possible strategies can be incorporated to effectively apply the digital game-based learning module during classroom instruction? 
+
+STATEMENT OF THE HYPOTHESIS
+Null Hypothesis 
+There is no difference between the pre-test and post-test scores of students after using the game-based learning module.
+
+SCOPE AND DELIMITATIONS OF THE STUDY
+This study involves the development and application of GeneSys, a game-based learning module designed to enhance students’ understanding of General Biology concepts. It aims to determine the effectiveness of the module in improving students’ comprehension, mastery, and retention of lessons. The researchers will assess students’ performance before and after the implementation of the module through pretest and post-test results. The study will cover topics identified as challenging for students during the second semester.
+The respondents will consist of sixty (60) Grade 12 STEM students from the sections Galileo Galilei and Thomas Edison at Puerto Galera National High School for the academic year 2025–2026. Thirty (30) students will be selected from each section based on the General Biology teacher’s academic records. The study is limited to the data obtained from the pre-test and post-test results, excluding other factors such as students’ performance in other subjects or external influences on learning outcomes.
+
+SIGNIFICANCE OF THE STUDY
+	The results of this research study will be beneficial to the following:
+
+STUDENTS.  The study benefits students by providing an engaging and interactive learning tool that enhances their comprehension and retention of General Biology concepts.
+TEACHERS. Teachers gain valuable teaching aid that complements traditional instruction methods, the study can assist educators in delivering General Biology lessons more effectively, catering to diverse learning styles. 
+SCHOOL. The school benefits from incorporating innovative educational technology like GeneSys by enhancing its teaching quality and modernizing the curriculum. This can improve overall students’ outcomes, support accreditation goals and position the school as forward-thinking institution that embraces technology to improve learning. 
+FUTURE RESEARCHERS. Future researchers can use the study as a foundation to explore further developments of game-based learning modules, investigate their impacts on other scientific fields or improve the design and evaluation method of educational games. 
+FUTURE DEVELOPERS. Future developers can derive insights into effective game design, user engagement strategies, and educational content integration. The findings from this study can guide the development of future learning tools that are both educational and entertaining.
+
+
+
+
+
+
+
+CONCEPTUAL FRAMEWORK
+                        IV                                                            DV
+ 
+	
+
+
+
+
+
+
+
+
+Figure 1. The Conceptual Framework
+	The first box, representing the Independent Variable (IV), shows the level of students’ performance before the implementation of the GeneSys game-based learning module. This is assessed in terms of critical thinking skills, knowledge retention, learning efficacy, and mastery of concepts. These indicators provide a comprehensive view of students’ academic readiness and participation levels prior to the intervention.
+The second box, representing the Dependent Variable (DV), illustrates the measurement of students’ performance after the implementation of the GeneSys module into their General Biology lessons, measured using the same parameters: critical thinking skills, knowledge retention, learning efficacy, and mastery of concepts.
+The double-headed arrow connecting the IV and DV indicates the comparison between students’ performance before and after the use of the GeneSys module. This comparison aims to identify any significant improvements, declines, or consistencies that may be attributed to the intervention.
+ At the bottom of the framework is the GeneSys, which influences the relationship between the two variables. Serving as a digital game-based learning platform, it is designed to enhance student interaction, promote active learning, and strengthen understanding of key General Biology concepts. Its role in the framework is to serve as the experimental tool whose effectiveness will be evaluated through the observed changes in student performance.
+
+DEFINITION OF TERMS
+The following terms used in this study are defined operationally:
+Game-Based Learning. An instructional approach that integrates game mechanics and elements to enhance learning outcomes. 
+General Biology. The study of basic biological principles and life processes.
+GeneSys. A game-based learning module specifically developed to enhance students’ understanding of General Biology concepts. 
+
+
+CHAPTER II
+Review of Related Literature
+	In this review of related literature, the researchers explore how game-based learning contributes to improving students’ understanding of general biology concepts. The review synthesizes studies on critical thinking skills, knowledge retention, learning efficacy, and mastery of concepts to provide a basis for the development and evaluation of the GeneSys module.
+
+	Critical thinking is an important skill that helps students analyze, solve problems, and make wise decisions, and several studies have shown that it can be improved through digital and game-based learning. Gentile et al. (2019) found that students with strong critical thinking skills perform better and gain more knowledge when using serious games, while Supriyatno et al. (2020) explained that online learning platforms help learners become more reflective and analytical. Mao et al. (2021) and Chang and Yeh (2021) discovered that using both digital and traditional methods increases motivation, understanding, and engagement. Drevin et al. (2023) also found that interactive learning helps students make decisions and solve problems effectively. Agustiani et al. (2024), Mahmudah et al. (2024), and Chuang (2024) confirmed that game-based learning improves critical thinking in different subjects, while Rizki (2024) showed that digital and cooperative learning models consistently enhance higher-order thinking skills.
+ 
+A study by Macayan, Baguistan, and Golias (2022) emphasized that students working in a game-based environment develop communication skills and teamwork by sharing ideas and performing tasks collectively. More recently, Situmorang et al. (2024) reinforced this idea by showing that digital game-based learning promotes social interaction and teamwork, which in turn enhances 21st-century competencies such as problem-solving and communication within the context of biology education. This suggests that GeneSys, by using a game-based format, is positioned not only to deliver biology content but also to cultivate essential skills necessary for academic and future success.
+
+	Knowledge retention is one of the most consistent benefits highlighted in game-based learning research. Kantorski (2022) reported that scaffolded and iterative interventions through digital games significantly improved students’ ability to retain knowledge. Tavares (2022) echoed this in a systematic review of nursing education, showing that game-based approaches not only supported knowledge retention but also boosted motivation, engagement, and critical thinking. Extending this evidence, Kanade, Hasanzadeh, Pitts, Esmaeili, and Duffy (2024) found that game-based ap  proaches sustain long-term knowledge retention. Their findings attribute this effect to the interactive and engaging features of games, which promote deeper cognitive processing and memory consolidation compared to traditional learning methods. These factors— engagement and motivation— are fundamental to maximizing the learning experience and indirectly contribute to better retention, reinforcing the value of the GeneSys design.
+
+	The mastery of concepts in biology has also been shown to improve through game-based strategies. Punyasettro and Yasri (2021) developed the VERT card game to teach chordate phylogeny, and their study demonstrated enhanced mastery of evolutionary biology concepts along with increased student motivation and confidence. Situmorang et al. (2024) also highlighted that digital games enable students to actively engage with difficult biological content, thus improving their problem-solving abilities and conceptual understanding. Similarly, Caparoso and Orleans (2024) found that inquiry-based digital games provide experiential and active learning opportunities, making them more effective than traditional methods for mastering complex biology concepts. The use of an interactive, game-based module like GeneSys provides a superior method for students to actively engage with, understand, and ultimately master complex general biology concepts, supported by increased motivation and enhanced problem-solving skills.
+
+	Self-efficacy refers to students’ belief in their ability to learn and perform tasks successfully, and several studies have shown that it can be improved through digital and game-based learning approaches. Lu and Lien (2019) found that students who saw game-based learning as both enjoyable and educational developed stronger self-efficacy compared to those who viewed it as only a game. Meccawy et al. (2023) also reported that game-based assessments increased students’ confidence and motivation because of engaging elements such as feedback and rewards. Ciloglu et al. (2023) discovered that students who used mobile augmented reality for biology learning had higher self-efficacy than those taught through traditional methods. Likewise, Zolkipli and Suradi (2023) concluded that game-based courseware motivates learners, promotes self-learning, and improves overall performance. Lin, Wang, and Hsieh (2024) found that digital games enhance students’ confidence and self-regulated learning strategies, while Chu et al. (2024) emphasized the importance of goal setting and structured activities in strengthening self-efficacy. Zhang (2024) and Getenet et al. (2024) also highlighted that technology-based learning improves students’ attitudes and engagement.
+
+	 In addition, Hu (2024) observed that game-based strategies make lessons more dynamic compared to traditional lectures, enhancing motivation. Lantzouni et al. (2024) emphasized that tailored games simplify complex biology topics, which not only increases engagement but also calls for clearer goals and adaptive challenges for optimal learning. Complementing these findings, ProdigeGame (2024) demonstrated that challenges and rewards within digital games significantly enhance both cognitive and emotional engagement in biology. 
+
+	Research also demonstrates measurable improvement in student performance after exposure to game-based learning. Jurada (2024) showed that learners significantly improved their biology scores in post-tests compared to pre-tests after being exposed to game-based and project-based approaches. This evidence confirms the potential of game-based strategies to bring about tangible learning gains. The reviewed literature provides a theoretical foundation for the development and evaluation of GeneSys. The evidence consistently supports the idea that game-based strategies lead to significant and measurable improvements in learning across multiple critical areas.
+
+	Despite its benefits, game-based learning faces several challenges. Hu (2024) pointed out the absence of structured feedback and debriefing sessions as one major limitation, since these are vital for consolidating learning and guiding student reflection. The study also identified practical barriers such as large class sizes with limited facilitators, which reduced the effectiveness of game-based approaches. Furthermore, the reliance on non-digital games limited opportunities for integrating technology into the learning process. These challenges highlight the need for well-structured interventions that include reflection, adequate facilitation, and digital tools to expand learning opportunities. The study consistently supports the strategy's potential to drive significant and measurable improvements across multiple critical areas, while also cautioning against common implementation pitfalls.
+
+SYNTHESIS OF THE REVIEW OF RELATED LITERATURE
+The reviewed studies collectively affirm that game-based learning significantly enhances students’ understanding of general biology concepts by improving critical thinking, knowledge retention, mastery of concepts, and self-efficacy. Researchers consistently report that interactive and digital games foster engagement, motivation, and deeper cognitive processing, which lead to better academic outcomes compared to traditional methods. Studies also highlight that game-based approaches promote collaboration, confidence, and self-directed learning, aligning with the goals of the GeneSys module. However, challenges such as limited feedback and inadequate facilitation underscore the need for structured reflection and effective implementation. Overall, the literature supports that well-designed game-based learning tools like GeneSys can create meaningful and enjoyable learning experiences that lead to measurable improvements in student performance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHAPTER 3 
+RESEARCH METHODOLOGY
+This chapter comprises the design section of the study and includes the research locale, sample and sampling technique, instrumentation, data gathering procedure, and statistical treatment of data.
+
+RESEARCH DESIGN
+	This study utilizes a quantitative, quasi-experimental research design. This design is deemed appropriate as the study aims to determine the effectiveness of the GeneSys game-based learning module in enhancing the academic performance of Grade 12 STEM students. According to Ghanad (2023), quantitative research involves the systematic collection, analysis, and interpretation of numerical data to test hypotheses and draw objective conclusions. Similarly, Sreekumar (2024) explained that quasi-experimental research is conducted when random assignment of participants is not feasible due to ethical or practical considerations, yet it still seeks to establish a cause-and-effect relationship between variables. 
+
+In this study, two groups of respondents will be involved. The first group, referred to as the experimental group, will utilize the GeneSys digital game-based learning module, while the second group, referred to as the control group, will receive instruction through traditional teaching methods. Both groups will undergo a pretest and post-test to measure their performance in terms of critical thinking skills, knowledge retention, learning efficacy, and mastery of concepts. The comparison between the pretest and post-test results will serve as the basis for determining whether the use of the GeneSys digital module has a significant effect on students’ understanding in General Biology. 
+
+The quasi-experimental design is considered suitable for this research as it allows the evaluation of the developed instructional material in a natural classroom setting while maintaining scientific rigor. It enables the researchers to determine the effectiveness of the intervention through statistical analysis using appropriate tools such as the mean, standard deviation, and t-test. The findings derived from this design will provide empirical evidence on the impact of game-based learning on students’ academic performance, thereby contributing to the improvement of instructional strategies in Biology education. 
+
+RESEARCH LOCALE
+The study will be conducted at Puerto Galera National High School, a public secondary institution located in Puerto Galera. The school is known for offering various academic strands under the K–12 Senior High School Curriculum, including the Science, Technology, Engineering, and Mathematics (STEM) strand. As one of the leading secondary schools in the municipality, it provides quality education that equips students with knowledge and skills essential for higher learning and future careers in science-related fields. The institution’s commitment to academic excellence and innovation makes it an ideal setting for implementing and evaluating educational interventions such as the GeneSys game-based learning module.
+	The research will particularly focus on the Grade 12 STEM students from the sections Galileo Galilei and Thomas Edison. These sections will be chosen because their curriculum includes General Biology, which is directly related to the objectives of the study. Conducting the research within this locale allowed the researchers to observe how the GeneSys module could enhance students’ understanding of biological concepts in an authentic classroom environment. The accessibility of the participants and the school’s openness to research-based innovations will further support the successful implementation of the study.
+
+SAMPLE AND SAMPLING TECHNIQUE
+The study employed a purposive-quota sampling technique to select participants who met the specific criteria aligned with the research objectives. Purposive sampling was used to ensure that only qualified respondents—Grade 12 STEM students enrolled in General Biology at Puerto Galera National High School—were included, as they represent the intended users of the GeneSys game-based learning module.
+Quota sampling was then applied to maintain equal representation between the two sections involved in the study: STEM 12 – Galileo Galilei and STEM 12 – Thomas Edison. A total of sixty (60) respondents were selected, with thirty (30) students from each section. The selection of participants was based on the academic records provided by the General Biology teacher, focusing on students’ performance during the second semester. This sampling approach ensured that both groups were appropriately represented within the quasi-experimental design, allowing for a fair comparison of students’ performance before and after the implementation of the GeneSys module.
+
+RESEARCH INSTRUMENT
+	In this study, the researchers utilized a standardized test questionnaire to determine the level of students’ performance before and after the implementation of GeneSys. The instrument was designed to measure four key parameters aligned with the study’s objective: critical thinking skills, knowledge retention, learning efficiency, and mastery of concepts. 
+Moreover, the standardized test was administered to the selected Grade 12 STEM students from the sections Galileo Galilei and Thomas Edison to assess their understanding and engagement in General Biology. The same standardized test was used for both the pretest and post-test phases to measure any significant improvement in students’ performance after exposure to the GeneSys. The results gathered from the instrument served as the basis for evaluating the module’s effectiveness as a game-based learning tool.
+
+STUDENT INFORMATION
+Name:
+Section: □ 12–Galileo Galilei  □ 12–Thomas Edison
+Group: □ Experimental (Used GeneSys)  □ Control (Traditional Method)
+Test Type: □ Pretest  □ Post-test
+Instruction: Read each question carefully and circle the correct answer.
+1. Which of the following best describe "Genetic Engineering"?
+	A. Mating of organisms with desirable qualities or traits. 
+	B. Natural cross-breeding of a male and female organism. 
+	C. Changes in species of organisms that occur over a long period of time. 
+	D. Modifcation of the characteristics of an organism by manipulating its genetic 		material.
+2. Which statement best describes human insulin that is produced by genetically engineered bacteria? 
+	A. This insulin will not function normally in humans because it is produced by 	bacteria.
+	B. This insulin is produced as a result of human insulin being inserted into 	bacteria cells.
+	C. This insulin is produced as a result of human insulin being inserted into 	bacteria.
+	D. This insulin may have fewer side effects that the insulin previously extracted 	from the pancreas of other animals.
+3. Which of the following sequence of four time frames arranged from the oldest to youngest?
+	A. Cenozoic Era, Mesozoic Era, Paleozoic Era, Precambrian time
+	B. Mesozoic Era, Corecambrian Time, Cenozoic Era, Paleozoic Era
+	C. Paleozoic era, Menozoic Era, Precambrian Time, Cenozoic Era 
+	D. Precambrian Time, Paleozoic Era, Mesozoic Era, cenozoic era
+4. According to the theory of evolution, which of the following is the cause on the differences of species?
+	A. natural selection
+	B. mutagenic agents
+	C. disuse of body structures
+	D. transmission of required characteristics
+5. A small group of people living in a remote area have high incidence of “blue skin” a condition that results from a variation in the structure of haemoglobin. All of the “blue-skinned” people can trace their ancestry to one couple, who were among the original settlers of this area. The unusual high frequency of “blue skin” in this area is an example of?
+	A. mutation
+	B. genetic drift
+	C. natural selection
+	D. artificial selection
+6. Figure 1 below shows the bone s in the forelimbs of three different organisms. What hypothesis supports on the similarities on the arrangement of bones?
+ 
+	A. These organisms are members of the same species.
+	B. These organisms are contains the same genetic information.
+	C. These organisms may have descended from a common ancestor.
+	D. These organisms have no adaptation to survive in different environments.
+7. Which of the following is an example of an evolutionary adaptation?
+	A. A change in frequency of a neutral allele by genetic drift.
+	B. Fixation in a population of a selectively advantageous allele.
+	C. The loss of an allele to a population due to a population bottleneck.
+	D. Constancy in the rate of accumulation of genetic changes in a molecule over 	time.
+8. In the area of evolution, which of the following statements describes Homologous Structure?
+	A. Structures that develop during an embryo various stages of growth.
+	B. Body part with the same underlying anatomical features in different animal.
+	C. Structure that performed the same function but with different embryological 	development.
+9. Fossils are remnants of ancient organisms trapped in rocks, tar pits, frozen in ice, or embedded in amber. How do fossils support evolution?
+	A. Organisms in the fossil record are identical to living organisms.
+	B. Individual species disappear and reappear in the fossil record over time.
+	C.. The fossils record provides evidence that organisms have changed over time.
+	D. The fossil record provides evidence that all organisms developed at the same 	time.
+10. Which of the following branch of science deals with classifying of organisms?
+	A. biology
+	B. genetics
+	C. physics
+	D. taxonomy
+11. Which question would hep you decide if an organism you found is a plant or fungus?
+	A. Does the organism reproduce sexually?
+	B. Does the organism perform photosynthesis?
+	C. Is there a nervous tissue present in the organism?
+	D. Is there a cell wall around the cells of organisms?
+12. Which of the following exhibits solely sexual reproduction?
+	A. Corals
+	B. Humans
+	C. Starfish
+	D. Hydra
+13. In this sketch, what kind of procreation does the organism represent?
+ 
+	A. asexual
+	B. bisexual
+	C. sexual
+	D. trisexual
+14. What compound in food is essential to life and health? It provides us with energy, building blocks for growth and repair, and substances necessary to regulate chemical process?
+	A. Atoms
+	B. Carbon Dioxide
+	C. Nutrients
+	D. Water
+15. In the plant there is a source cell and a sink cell. What kind of plant vascular tissue does it mean?
+	A. Phloem
+	B. Xylem
+	C. Ascent of xylem sap
+	D. Pressure flow or bulk flow
+16. In Mammalian Kidney, what feedback hormone is detected when a person is in dire need of conservation of water?
+	A. Renin
+	B. Testosterone
+	C. Vasopressin 
+	D. None of the above
+17. Which of the classifications of sensory receptors have the same characteristics?
+	A. Proprioceptors and intraceptors
+	B. Thermoreceptors and interceptors
+	C. Photoreceptors and proproceptors
+	D. Mechanoreceptors and exteroceptors
+18. What is the complex network of organs containing cells which recognizes foreign substances in the body?
+	A. Circulatory system
+	B. Immune system
+	C. respiratory system
+	D. Skeletal system
+19. What is the process that allows the body to maintain its internal temperature?
+	A. Homeostasis
+	B. Ectotherm
+	C. Osmoregulation
+	D. Thermoregulation
+20.  Some of the body’s homeostatic responses rely on ‘negative feedback’. Which of the following happens in negative feedback?
+	A. The body’s response acts to oppose the changes in the physiological variable.
+	B. The body’s response acts to enhance the change in the physiological variable.
+	C. The body ignores changes in a physiological variable that are directed away 	from the set point for that variable.
+	D. The body ignores changes in a physiological variable that are directed towards 	the set point for that variable. 
+
+DATA GATHERING PROCEDURE
+Before conducting the study, the researchers sought approval from the principal and advisers of STEM 12–Galileo Galilei and STEM 12–Thomas Edison at Puerto Galera National High School. Parental consent and student assent forms were distributed to ensure voluntary participation. After approval, both the experimental and control groups were given a pretest  to determine their initial level of performance in terms of critical thinking skills, knowledge retention, learning efficacy, and mastery of concepts Following the pretest, the GeneSys game-based learning module will be implemented.The experimental group will be exposed to the GeneSys digital game-based learning module, while the control group will receive the same Biology lessons through traditional instruction. The module will serve as an interactive learning tool designed to help students better understand topics in the second semester of General Biology that were identified as difficult based on the subject teacher’s records. The implementation will be conducted in multiple sessions, each lasting 40–60 minutes, ensuring that all participants will receive equal time and guidance in using the module.
+After completing all sessions, both groups will take a post-test using the same instrument to measure immediate learning gains. All responses will be collected, coded, and analyze using appropriate statistical tools, including percentage, mean, standard deviation, t-test, and ANCOVA. Attendance logs and observation checklists will also be utilize to ensure consistency, fairness, and equal instructional time for both groups throughout the study.	
+
+STATISTICAL TOOL AND TREATMENTS
+The results of the organized tabulated data will be treated statistically. The following statistical treatments will be used to interpret the data gathered from the pretest and post-test administration.
+Descriptive Statistics will be used to summarize and characterized the data set, specifically addressing SOP 1 (Pretest performance) and SOP 2 (Post-test performance). This determines the students’ initial and final performance across the four parameters: Critical thinking skills, Knowledge Retention, Learning efficiency, and Mastery of concepts. 
+
+1. Percentage (%). This is used to compute the frequency and percent distribution of the respondents. In this study, this will be utilized to calculate the percentage of the respondents based on their age and sex.
+The formula is:  % = (F)/N x 100%
+Where: 
+% - Percentage
+F – Frequency
+N – Total no. of Respondents
+
+2. Arithmetic Mean (x̄). the mean will be computed to determine the average level of students’ performance for both pretest and post-test phases. The mean will be used to establish the baseline and final status for each group.
+The formula is:  x̄ = (∑x)/n
+Where: 
+x̄= the mean value
+(∑x) = the sum of all individual scores
+n = the total number of respondents
+
+3. Standard deviation (SD). This will be computed to measure the dispersion or variability of the scores around the mean, which indicates the consistency of the score within the groups for both the pretest and post-test.
+The formula is s = √ (∑ (x - x̄)2 / (N - 1))
+
+Inferential statistics will be utilized to test the primary research hypothesis and directly address SOP 3: ”Is there a significant difference between the students’ performance before and after the implementation of the GeneSys digital game-based learning module?”
+
+4. Paired Sample t-test. This test will be used to compare the mean score of the pretest and post-test within the Experimental group (GeneSys) and within the Control Group ( Traditional Method), respectively. This will determine if there is a statistically significant change in performance for each group following the intervention period.
+
+5. Analysis of Covariance (ANCOVA). To provide most rigorous test of the intervention’s impact, ANCOVA will be used to compare the Post-test mean scores between Experimental Group and the Control Group. The ANCOVA will statistically control for preexisting differences by using the pretest score as a covariate. This isolates the effect attributable solely to the GeneSys module and provides a more accurate assessment of its efficacy compared to the traditional method.
+References
+Ai-Chu Elisha Ding, & Yu, C.-H. (2024). Serious Game-Based Learning and Learning by Making Games: Types of Game-Based Pedagogies and Student Gaming Hours Impact Students’ Science Learning Outcomes. Computers and Education/Computers & Education, 218, 105075–105075. https://doi.org/10.1016/j.compedu.2024.105075
+Caparoso, J. K. V., & Orleans, A. V. (2024). DiGIBST: An inquiry-based digital game-based learning pedagogical model for science teaching. STEM Education, 4(3), 282–298. https://doi.org/10.3934/steme.2024017
+Chuang, T.-Y., Lu, Y.-H., Tsai, S.-K., & Chen, W.-F. (2024). Examining Critical Thinking Skills in Game-Based Learning: A Behavioral Analysis Approach. 83, 148–151. https://doi.org/10.1109/iiai-aai63651.2024.00037
+Ghanad, A. (2023). An Overview of Quantitative Research Methods. ResearchGate; Everant Journals. https://www.researchgate.net/publication/373370007_An_Overview_of_Quantitative_Research_Methods
+Google Scholar. (2025). Share.google. https://share.google/1VOn6jbjOJDNoaKAm
+Hu, Z. (2024). Game-Based Learning: Alternative Approaches to Teaching and Learning Strategies in Health Sciences Education. Educational Process: International Journal, 13(2), 90–104. https://eric.ed.gov/?q=game-based+learning+&id=EJ1429624
+
+Jacob, S., Madrona, R., & Mirabueno, J. (n.d.). DEVELOPMENT AND VALIDATION OF BIODOMINO A GAME-BASED TILE FOR ESTABLISHING MASTERY OF BIOLOGY CONCEPTS. Retrieved September 2, 2025, from https://e-saliksik.deped.gov.ph/wp-content/uploads/2023/12/V_2023_JacobMadrona-Mirabueno_Development-and-Validation-of-BioDomino-a-Game-Based-Tile.pdf
+Joy, S., Rumsey, K., & Ford, M. (2024). The Treasures of Renal Isle: Evaluating a Gamified Module While Enhancing Student Learning. SAGE Open Nursing, 10. https://doi.org/10.1177/23779608241290683
+Jurada, K. (2024). Game-Based and Project-Based Approaches: Their Effects on Grade 10 Learners’ Performance in Biology. Psychology and Education: A Multidisciplinary Journal, 17(3), 1–1. https://ejournals.ph/article.php?id=25523&fbclid=IwY2xjawMjy85leHRuA2FlbQIxMABicmlkETFrOHBVQTQ4bUNzRkFOOHV1AR7OqG6k633Z9deZyBHZsXIGEPvZ9xk-6a1vYpyj7tt54IhyG2UmdbAu7gUDaw_aem_nUm3g_I6f4j4C7gzFcokzw
+Kanade, S. G., Hasanzadeh, S., Pitts, B., Esmaeili, B., & Duffy, V. G. (2024). Evaluating the Effectiveness of Game-Based Learning for Long-Term Knowledge Retention. Proceedings of the Human Factors and Ergonomics Society Annual Meeting. https://doi.org/10.1177/10711813241260392
+Khoo, Y. Y., Mohamad Rohieszan Ramdan, Abdullah, N. L., Aziz, A., & Nurhanie Mahjom. (2025). The Impacts of Game-Based Learning on Thinking and Learning in Higher Education Context: A Scoping Review. International Journal of Education in Mathematics, Science and Technology, 13(3), 623–637. https://eric.ed.gov/?q=game-based+learning+&ff1=dtySince_2021&id=EJ1475747
+Lantzouni, M., Poulopoulos, V., & Wallace, M. (2024). Gaming for the Education of Biology in High Schools. Encyclopedia, 4(2), 672–681. https://doi.org/10.3390/encyclopedia4020041
+Li, X., & Li, R. (2025). How Game-Based Learning Supports the Creativity of University Students? The Context of China. Innovations in Education and Teaching International, 62(3), 823–837. https://eric.ed.gov/?q=game-based+learning+&id=EJ1473049&fbclid=IwY2xjawMjzRZleHRuA2FlbQIxMABicmlkETFrOHBVQTQ4bUNzRkFOOHV1AR5Lf9vzK5UW77iSy8xspTncqsekEE7LtElsd0YlT2lAzxP18ZWWfpmljEmltg_aem_rV-OFJM9mtDKEG9yavMKQw
+Lin, Y.-L., Wang, W.-T., & Hsieh, M.-J. (2024). The effects of students’ self-efficacy, self-regulated learning strategy, perceived and actual learning effectiveness: A digital game-based learning system. Education and Information Technologies. https://doi.org/10.1007/s10639-024-12700-4
+Lu, Y.-L., & Lien, C.-J. (2019). Are They Learning or Playing? Students’ Perception Traits and Their Learning Self-Efficacy in a Game-Based Learning Environment. Journal of Educational Computing Research, 57(8), 1879–1909. https://doi.org/10.1177/0735633118820684
+Mao, W., Cui, Y., Chiu, M. M., & Lei, H. (2021). Effects of Game-Based Learning on Students’ Critical Thinking: A Meta-Analysis. Journal of Educational Computing Research, 59(8), 073563312110070. https://doi.org/10.1177/07356331211007098
+Meccawy, M., Alzahrani, A., Mattar, Z., Almohammadi, R., Alzahrani, S., Aljizani, G., & Meccawy, Z. (2023). Assessing EFL Students’ Performance and Self-Efficacy Using a Game-Based Learning Approach. Education Sciences, 13(12), 1228. https://doi.org/10.3390/educsci13121228
+Mellania Nur Mahmudah, Dewi Liesnoor Setyowati, & Suwito Eko Pramono. (2024). A Quiziz Game-Based Learning Implementation in Improving Learner’s Critical Thinking Skills. International Journal of Research and Review, 11(10), 96–104. https://doi.org/10.52403/ijrr.20241010
+Pilar, del. (2025, March 3). Digital Game-Based Learning for Science Teaching. Observatory - Institute for the Future of Education. https://observatory.tec.mx/edu-bits-2/digital-game-based-learning-for-science-teaching/?fbclid=IwY2xjawMjznRleHRuA2FlbQIxMABicmlkETFrOHBVQTQ4bUNzRkFOOHV1AR69MhtS-yGO21276luPnLc-YnG8hZ6c7tcY2U2GTisXhenXWYlv11LOIsSqKQ_aem_ZlDW2BkJuI2K9exNddIq1A
+Punyasettro, S., & Yasri, P. (2021). A Game-Based Learning Activity to Promote Conceptual Understanding of Chordates’ Phylogeny and Self-Efficacy to Learn Evolutionary Biology. European Journal of Educational Research, 10(4), 1937–1951. https://eric.ed.gov/?q=A+Game-Based+Learning+Activity+to+Promote+Conceptual+Understanding+of+Chordates%27+Phylogeny+and+Self-Efficacy+to+Learn+Evolutionary+Biology%2c+European+Journal+of+Educational+Research%2c+2021&id=EJ1318015
+Risya Pramana Situmorang, Hadi Suwono, Munzil Munzil, Susanto, H., Chang, C.-Y., & Liu, S.-Y. (2024). Learn biology using digital game-based learning: A systematic literature review. Eurasia Journal of Mathematics Science and Technology Education, 20(6), em2459–em2459. https://doi.org/10.29333/ejmste/14658
+Rizki, I. A., Nadi Suprapto, Saphira, H. V., Yusril Alfarizy, Ramadani, R., Saputri, A. D., & Dewi Suryani. (2024). Cooperative model, digital game, and augmented reality-based learning to enhance students critical thinking skills and learning motivation. Journal of Pedagogical Research. https://doi.org/10.33902/jpr.202423825
+Sreekumar, D. (2024, November 25). What is Quasi-Experimental Design? Definition, Types, and Examples | Researcher.Life. Researcher.life. https://researcher.life/blog/article/what-is-quasi-experimental-design-definition-types-and-examples/
+Sun, L., Kangas, M., & Ruokamo, H. (2023). Game-based features in intelligent game-based learning environments: a systematic literature review. Interactive Learning Environments, 1–17. https://doi.org/10.1080/10494820.2023.2179638
+Supriyatno, T., Susilawati, S., & Hassan, A. (2020). E-learning development in improving students’ critical thinking ability Repository of Maulana Malik Ibrahim State Islamic University of Malang. Uin-Malang.ac.id. http://repository.uin-malang.ac.id/7005/1/7005.pdf
+
+Tavares, N. (2022). The use and impact of game-based learning on the learning experience and knowledge retention of nursing undergraduate students: A systematic literature review. Nurse Education Today, 117, 105484. https://doi.org/10.1016/j.nedt.2022.105484
+Zhang, F. (2024). Effects of Game-Based Learning on Academic Outcomes: A Study of Technology Acceptance and Self-Regulation in College Students. Heliyon, 10(16), e36249–e36249. https://doi.org/10.1016/j.heliyon.2024.e36249
+
+
