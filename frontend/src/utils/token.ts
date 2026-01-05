@@ -1,24 +1,14 @@
-/**
- * Token management utilities for authentication
- */
-
 import { DecodedToken, UserFromToken } from "@/types/utils";
 
 const TOKEN_KEY = 'genesys_auth_token';
 const REFRESH_TOKEN_KEY = 'genesys_refresh_token';
 
-/**
- * Store authentication token in localStorage
- */
 export const setToken = (token: string): void => {
   if (typeof window !== 'undefined') {
     localStorage.setItem(TOKEN_KEY, token);
   }
 };
 
-/**
- * Get authentication token from localStorage
- */
 export const getToken = (): string | null => {
   if (typeof window !== 'undefined') {
     return localStorage.getItem(TOKEN_KEY);
@@ -26,9 +16,6 @@ export const getToken = (): string | null => {
   return null;
 };
 
-/**
- * Remove authentication token from localStorage
- */
 export const removeToken = (): void => {
   if (typeof window !== 'undefined') {
     localStorage.removeItem(TOKEN_KEY);
@@ -36,18 +23,12 @@ export const removeToken = (): void => {
   }
 };
 
-/**
- * Store refresh token in localStorage
- */
 export const setRefreshToken = (token: string): void => {
   if (typeof window !== 'undefined') {
     localStorage.setItem(REFRESH_TOKEN_KEY, token);
   }
 };
 
-/**
- * Get refresh token from localStorage
- */
 export const getRefreshToken = (): string | null => {
   if (typeof window !== 'undefined') {
     return localStorage.getItem(REFRESH_TOKEN_KEY);
@@ -55,17 +36,10 @@ export const getRefreshToken = (): string | null => {
   return null;
 };
 
-/**
- * Check if user is authenticated (has valid token)
- */
 export const isAuthenticated = (): boolean => {
   return !!getToken();
 };
 
-/**
- * Decode JWT token to get payload (without verification)
- * Note: This is for client-side only, server should verify
- */
 export const decodeToken = (token: string): DecodedToken | null => {
   try {
     const base64Url = token.split('.')[1];
@@ -82,9 +56,6 @@ export const decodeToken = (token: string): DecodedToken | null => {
   }
 };
 
-/**
- * Check if token is expired
- */
 export const isTokenExpired = (token: string): boolean => {
   const decoded = decodeToken(token);
   if (!decoded || !decoded.exp) return true;
@@ -93,9 +64,6 @@ export const isTokenExpired = (token: string): boolean => {
   return decoded.exp < currentTime;
 };
 
-/**
- * Get token expiration date
- */
 export const getTokenExpiration = (token: string): Date | null => {
   const decoded = decodeToken(token);
   if (!decoded || !decoded.exp) return null;
@@ -103,9 +71,6 @@ export const getTokenExpiration = (token: string): Date | null => {
   return new Date(decoded.exp * 1000);
 };
 
-/**
- * Store token in cookie (for server-side access in middleware)
- */
 export const setTokenCookie = (token: string): void => {
   if (typeof document !== 'undefined') {
     const expirationDate = getTokenExpiration(token);
@@ -114,18 +79,12 @@ export const setTokenCookie = (token: string): void => {
   }
 };
 
-/**
- * Remove token from cookie
- */
 export const removeTokenCookie = (): void => {
   if (typeof document !== 'undefined') {
     document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax; Secure';
   }
 };
 
-/**
- * Get user data from token
- */
 export const getUserFromToken = (token: string): UserFromToken | null => {
   const decoded = decodeToken(token);
   if (!decoded) return null;
