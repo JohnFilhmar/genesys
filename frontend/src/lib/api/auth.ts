@@ -34,7 +34,7 @@ export const login = async (data: ITeacherLogin): Promise<AuthResponse> => {
  */
 export const getMe = async (): Promise<ProfileResponse> => {
   const response = await apiClient.get<ProfileResponse>('/auth/me');
-  return response.data;
+  return Promise.resolve(response.data);
 };
 
 /**

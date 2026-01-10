@@ -45,7 +45,7 @@ const LandingPage = () => {
       </nav>
 
       {/* --- HERO SECTION --- */}
-      <main className="flex-grow">
+      <main className="grow">
         <section className="relative bg-slate-900 overflow-hidden">
           {/* Background Decorative Blobs (The RGB Elements) */}
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -66,7 +66,7 @@ const LandingPage = () => {
 
                 <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight">
                   Master Biology <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-bio-400 via-blue-400 to-dna-400">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-bio-400 via-blue-400 to-dna-400">
                     Through Play
                   </span>
                 </h1>
@@ -81,7 +81,7 @@ const LandingPage = () => {
                   <input
                     type="text"
                     placeholder="Enter Room Code (e.g. A1B2C3)"
-                    className="flex-grow px-4 py-3 text-slate-900 outline-none rounded-l-lg font-mono placeholder:text-slate-400"
+                    className="grow px-4 py-3 text-slate-900 outline-none rounded-l-lg font-mono placeholder:text-slate-400"
                   />
                   <button className="bg-bio-600 hover:bg-bio-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2">
                     Join <ArrowRight className="w-5 h-5" />

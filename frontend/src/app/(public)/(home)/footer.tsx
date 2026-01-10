@@ -124,7 +124,7 @@ export default function Footer() {
             <Link href="/privacy" className="hover:text-slate-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-slate-300 transition-colors">Terms of Use</Link>
             <span className="flex items-center gap-1 text-xs bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
-              Made with <Heart className="w-3 h-3 text-dna-500 fill-dna-500" /> by <Link href="https://github.com/JohnFilhmar" className="hover:text-slate-300 transition-colors">John Filhmar Ola</Link>
+              Made by <Link href="https://github.com/JohnFilhmar" className="hover:text-slate-300 transition-colors">John Filhmar Ola</Link>
             </span>
           </div>
         </div>

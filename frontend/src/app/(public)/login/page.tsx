@@ -1,6 +1,6 @@
 'use client';
 
-import { withGuest } from "@/(middleware)";
+import { withGuest } from "@/middleware";
 import Login from "./login";
 
 function LoginPage() {

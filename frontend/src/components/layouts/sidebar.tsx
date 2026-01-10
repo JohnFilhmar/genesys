@@ -1,11 +1,13 @@
 'use client';
 
 import { removeToken, removeTokenCookie } from "@/utils";
-import { BarChart3, Dna, FileText, LayoutDashboard, LogOut, Play, Settings, Users } from "lucide-react";
+import { BarChart3, CheckCircle2Icon, Dna, FileText, LayoutDashboard, LogOut, Play, Settings, Users } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // Shared Sidebar Content (to avoid duplication)
 export default function SidebarContent() {
+  const pathname = usePathname();
 
   async function handleSignOut(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
@@ -21,20 +23,22 @@ export default function SidebarContent() {
           <div className="bg-linear-to-br from-bio-400 to-blue-500 w-8 h-8 rounded-lg flex items-center justify-center">
             <Dna className="text-white w-5 h-5" />
           </div>
-          Gene<span className="text-bio-400">Sys</span>
+          <div>
+            Gene<span className="text-bio-400">Sys</span>
+          </div>
         </div>
       </div>
 
       <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
-        <NavItem href="/dashboard" icon={LayoutDashboard} active>Dashboard</NavItem>
-        <NavItem href="/questions" icon={FileText}>Question Bank</NavItem>
-        <NavItem href="/rooms" icon={Play}>My Rooms</NavItem>
-        <NavItem href="/analytics" icon={BarChart3}>Analytics & Reports</NavItem>
-        <NavItem href="/students" icon={Users}>Students</NavItem>
+        <NavItem href="/dashboard" icon={LayoutDashboard} active={pathname === '/dashboard'}>Dashboard</NavItem>
+        <NavItem href="/questions" icon={FileText} active={pathname === '/questions'}>Question Bank</NavItem>
+        <NavItem href="/rooms" icon={Play} active={pathname === '/rooms'}>My Rooms</NavItem>
+        <NavItem href="/analytics" icon={BarChart3} active={pathname === '/analytics'}>Analytics & Reports</NavItem>
+        <NavItem href="/students" icon={Users} active={pathname === '/students'}>Students</NavItem>
       </nav>
 
       <div className="p-4 border-t border-slate-800 shrink-0">
-        <NavItem href="/settings" icon={Settings}>Settings</NavItem>
+        <NavItem href="/settings" icon={Settings} active={pathname === '/settings'}>Settings</NavItem>
         <button onClick={(e) => handleSignOut(e)} className="flex w-full items-center gap-3 px-3 py-2 text-sm font-medium text-dna-400 hover:text-dna-300 hover:bg-slate-800 rounded-lg transition-colors mt-1">
           <LogOut className="w-5 h-5" />
           Sign Out
