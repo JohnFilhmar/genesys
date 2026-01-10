@@ -1,6 +1,6 @@
 import RoomStudent from './room-student';
 
-export default async function RoomPage({ params }: { params: { roomId: string } }) {
+export default async function RoomPage({ params }: { params: Promise<{ roomId: string }> }) {
 
   const { roomId } = await params;
   

@@ -15,7 +15,6 @@ import {
   BarChart3,
   Calendar,
   Search,
-  Filter,
   ExternalLink,
   Share2,
   Settings
@@ -25,6 +24,7 @@ import { useState } from "react";
 function Rooms() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState<'active' | 'scheduled' | 'closed'>('active');
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedStatus, setSelectedStatus] = useState("all");
 
   // Mock Data - Replace with actual API calls using useRooms hook
@@ -275,7 +275,7 @@ function Rooms() {
               activeRooms.map((room) => (
                 <div 
                   key={room.id}
-                  className="p-5 rounded-xl border border-slate-200 hover:border-bio-300 hover:shadow-md transition-all group bg-gradient-to-br from-white to-slate-50"
+                  className="p-5 rounded-xl border border-slate-200 hover:border-bio-300 hover:shadow-md transition-all group bg-linear-to-br from-white to-slate-50"
                 >
                   <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                     {/* Room Info */}
