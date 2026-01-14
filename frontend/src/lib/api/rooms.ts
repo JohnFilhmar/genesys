@@ -12,6 +12,7 @@ import {
   IUpdateRoomStatus,
   ApiResponse,
   IRoom,
+  IRoomCreate,
 } from '@/types';
 
 /**
@@ -43,7 +44,7 @@ export const getRoomByCode = async (code: string): Promise<RoomByCodeResponse> =
 /**
  * Create a new room
  */
-export const createRoom = async (data: IRoom): Promise<RoomResponse> => {
+export const createRoom = async (data: IRoomCreate): Promise<RoomResponse> => {
   console.log('Creating room with data:', data);
   const response = await apiClient.post<RoomResponse>('/rooms', data);
   return response.data;
