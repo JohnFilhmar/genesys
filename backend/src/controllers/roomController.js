@@ -129,15 +129,19 @@ const getRoomByCode = async (req, res, next) => {
     const cachedRoom = await cacheGet(cacheKey);
 
     if (cachedRoom) {
-      // Check if room is active and not expired
-      if (cachedRoom.status === 'active' && new Date(cachedRoom.expiresAt) > new Date()) {
+      // Check if room is active
+      if (cachedRoom.status === 'active') {
         return res.json({
           success: true,
           data: {
+            _id: cachedRoom._id,
             roomCode: cachedRoom.roomCode,
             title: cachedRoom.title,
             description: cachedRoom.description,
+            status: cachedRoom.status,
+            teacher: cachedRoom.teacher,
             settings: cachedRoom.settings,
+            questions: cachedRoom.questions,
             questionCount: cachedRoom.questions.length,
           },
           cached: true,
@@ -148,7 +152,7 @@ const getRoomByCode = async (req, res, next) => {
     const room = await Room.findOne({ roomCode })
       .populate('questions', 'questionText questionType choices correctAnswer pairs topic difficulty points imageUrl')
       .populate('teacher', 'firstName lastName');
-
+      
     if (!room) {
       return res.status(404).json({
         success: false,
@@ -161,14 +165,6 @@ const getRoomByCode = async (req, res, next) => {
       return res.status(400).json({
         success: false,
         message: 'Room is not active',
-      });
-    }
-
-    // Check if room has expired
-    if (new Date(room.expiresAt) < new Date()) {
-      return res.status(400).json({
-        success: false,
-        message: 'Room has expired',
       });
     }
 
@@ -186,9 +182,11 @@ const getRoomByCode = async (req, res, next) => {
     res.json({
       success: true,
       data: {
+        _id: room._id,
         roomCode: room.roomCode,
         title: room.title,
         description: room.description,
+        status: room.status,
         teacher: room.teacher,
         settings: room.settings,
         questions: room.questions,

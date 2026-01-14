@@ -2,10 +2,37 @@
 
 import { ArrowRight, Brain, Microscope, Zap } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Footer from "./footer";
 import Image from "next/image";
 
 const LandingPage = () => {
+  const router = useRouter();
+  const [roomCode, setRoomCode] = useState('');
+
+  const handleRoomCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.toUpperCase().slice(0, 6);
+    setRoomCode(value);
+  };
+
+  const handleJoinRoom = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (roomCode.length !== 6) {
+      alert('Room code must be 6 characters');
+      return;
+    }
+
+    const alphanumericRegex = /^[A-Z0-9]{6}$/;
+    if (!alphanumericRegex.test(roomCode)) {
+      alert('Room code must contain only letters and numbers');
+      return;
+    }
+
+    router.push(`/room/${roomCode}`);
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
       {/* --- NAVBAR --- */}
@@ -77,16 +104,23 @@ const LandingPage = () => {
                 </p>
 
                 {/* The "Enter Code" Box - Crucial for Students */}
-                <div className="bg-white p-2 rounded-xl flex shadow-xl max-w-md transform hover:scale-105 transition-transform duration-200">
+                <form onSubmit={handleJoinRoom} className="bg-white p-2 rounded-xl flex shadow-xl max-w-md transform hover:scale-105 transition-transform duration-200">
                   <input
                     type="text"
+                    value={roomCode}
+                    onChange={handleRoomCodeChange}
                     placeholder="Enter Room Code (e.g. A1B2C3)"
-                    className="grow px-4 py-3 text-slate-900 outline-none rounded-l-lg font-mono placeholder:text-slate-400"
+                    className="grow px-4 py-3 text-slate-900 outline-none rounded-l-lg font-mono placeholder:text-slate-400 uppercase"
+                    maxLength={6}
                   />
-                  <button className="bg-bio-600 hover:bg-bio-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2">
+                  <button 
+                    type="submit"
+                    disabled={roomCode.length !== 6}
+                    className="bg-bio-600 hover:bg-bio-700 disabled:bg-slate-400 disabled:cursor-not-allowed text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center gap-2"
+                  >
                     Join <ArrowRight className="w-5 h-5" />
                   </button>
-                </div>
+                </form>
               </div>
 
               {/* Right Column: Visual/Dynamic Element */}

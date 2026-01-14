@@ -7,11 +7,11 @@ import {
   RoomResponse,
   RoomsResponse,
   RoomByCodeResponse,
-  IRoomCreate,
   IRoomUpdate,
   IAddQuestionsToRoom,
   IUpdateRoomStatus,
   ApiResponse,
+  IRoom,
 } from '@/types';
 
 /**
@@ -36,14 +36,15 @@ export const getRoom = async (id: string): Promise<RoomResponse> => {
  * Get room by code (public endpoint for students)
  */
 export const getRoomByCode = async (code: string): Promise<RoomByCodeResponse> => {
-  const response = await apiClient.get<RoomByCodeResponse>(`/rooms/code/${code}`);
+  const response = await apiClient.get<RoomByCodeResponse>(`/rooms/join/${code}`);
   return response.data;
 };
 
 /**
  * Create a new room
  */
-export const createRoom = async (data: IRoomCreate): Promise<RoomResponse> => {
+export const createRoom = async (data: IRoom): Promise<RoomResponse> => {
+  console.log('Creating room with data:', data);
   const response = await apiClient.post<RoomResponse>('/rooms', data);
   return response.data;
 };

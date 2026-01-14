@@ -42,21 +42,19 @@ export enum QuestionType {
   MULTIPLE_CHOICE = 'multiple-choice',
   TRUE_FALSE = 'true-false',
   MATCHING = 'matching',
-  FILL_IN_BLANK = 'fill-in-blank',
+  FILL_IN_BLANK = 'fill-in-the-blank',
   ESSAY = 'essay',
   SHORT_ANSWER = 'short-answer'
 }
 
 export enum QuestionTopic {
-  CELL_STRUCTURE = 'cell-structure',
-  GENETICS = 'genetics',
-  EVOLUTION = 'evolution',
-  ECOLOGY = 'ecology',
-  HUMAN_BIOLOGY = 'human-biology',
-  PLANT_BIOLOGY = 'plant-biology',
-  BIOCHEMISTRY = 'biochemistry',
-  MOLECULAR_BIOLOGY = 'molecular-biology',
-  OTHER = 'other'
+  GENETIC_ENGINEERING = 'Genetic Engineering',
+  RECOMBINANT_DNA_TECHNOLOGY = 'Recombinant DNA Technology',
+  GEOLOGIC_TIMELINE = 'Geologic Timeline',
+  MECHANISMS_OF_EVOLUTION = 'Mechanisms of Evolution',
+  DESCENT_WITH_MODIFICATION = 'Descent with Modification',
+  DEVELOPMENT_OF_EVOLUTIONARY_THOUGHT = 'Development of Evolutionary Thought',
+  OTHERS = 'Others'
 }
 
 export enum QuestionDifficulty {
@@ -66,6 +64,7 @@ export enum QuestionDifficulty {
 }
 
 export interface IMultipleChoiceOption {
+  _id?: string;
   text: string;
   isCorrect: boolean;
 }
@@ -78,13 +77,13 @@ export interface IMatchingPair {
 export interface IQuestion {
   _id: string;
   teacher: string | ITeacher; // Can be populated
-  type: QuestionType;
+  questionType: QuestionType;
   topic: QuestionTopic;
   difficulty: QuestionDifficulty;
   questionText: string;
   
   // For multiple-choice
-  options?: IMultipleChoiceOption[];
+  choices?: IMultipleChoiceOption[];
   
   // For true-false
   correctAnswer?: boolean;
@@ -104,19 +103,18 @@ export interface IQuestion {
 }
 
 export interface IQuestionCreate {
-  type: QuestionType;
+  questionType: QuestionType;
   topic: QuestionTopic;
   difficulty: QuestionDifficulty;
   questionText: string;
-  options?: IMultipleChoiceOption[];
+  choices?: IMultipleChoiceOption[];
   correctAnswer?: boolean;
   pairs?: IMatchingPair[];
   correctAnswers?: string[];
   points: number;
-  timeLimit?: number;
 }
 
-export interface IQuestionUpdate extends Partial<IQuestionCreate> {}
+export type IQuestionUpdate = Partial<IQuestionCreate>;
 
 export interface IQuestionFilters {
   topic?: QuestionTopic;
@@ -133,6 +131,21 @@ export enum RoomStatus {
   CLOSED = 'closed'
 }
 
+export interface IRoomSettings {
+  timeLimit?: number; // in minutes
+  shuffleQuestions?: boolean;
+  shuffleChoices?: boolean;
+  showResultsImmediately?: boolean;
+  allowReview?: boolean;
+  maxStudents?: number;
+  requiredFields?: {
+    name?: boolean;
+    lrn?: boolean;
+    section?: boolean;
+    email?: boolean;
+  };
+}
+
 export interface IRoom {
   _id: string;
   teacher: string | ITeacher; // Can be populated
@@ -141,24 +154,42 @@ export interface IRoom {
   description?: string;
   status: RoomStatus;
   questions: string[] | IQuestion[]; // Can be populated
-  maxStudents?: number;
-  allowLateJoin: boolean;
-  showResults: boolean;
-  expiresAt: string;
+  settings: IRoomSettings;
+  startDate?: string;
+  endDate?: string;
+  stats: {
+    totalParticipants: number;
+    totalSubmissions: number;
+    averageScore: number;
+  };
   createdAt: string;
   updatedAt: string;
+}
+
+export interface IRoomJoinResponse {
+  _id?: string; // May not be included for security
+  roomCode: string;
+  title: string;
+  description?: string;
+  status?: RoomStatus;
+  teacher?: {
+    _id: string;
+    firstName: string;
+    lastName: string;
+  };
+  settings: IRoomSettings;
+  questions?: IQuestion[];
+  questionCount: number;
 }
 
 export interface IRoomCreate {
   title: string;
   description?: string;
-  questions?: string[]; // Question IDs
-  maxStudents?: number;
-  allowLateJoin?: boolean;
-  showResults?: boolean;
+  questions: string[]; // Question IDs
+  settings: IRoomSettings;
 }
 
-export interface IRoomUpdate extends Partial<IRoomCreate> {
+export interface IRoomUpdate extends Partial<IRoom> {
   status?: RoomStatus;
 }
 
@@ -171,24 +202,48 @@ export interface IUpdateRoomStatus {
 }
 
 // ==================== Student Response Model ====================
+export interface IStudentInfo {
+  name: string;
+  lrn?: string;
+  section?: string;
+  email?: string;
+}
+
+export interface IResponseAnswer {
+  questionId: string;
+  answer: string | boolean | object | string[]; // Mixed type - can be string, boolean, array, object
+  isCorrect: boolean;
+  pointsEarned: number;
+  timeSpent: number;
+}
+
+export enum ResponseStatus {
+  IN_PROGRESS = 'in-progress',
+  SUBMITTED = 'submitted',
+  REVIEWED = 'reviewed'
+}
+
 export interface IStudentResponse {
   _id: string;
   room: string | IRoom; // Can be populated
-  question: string | IQuestion; // Can be populated
-  studentName: string;
-  studentAnswer: any; // Can be string, boolean, array, etc.
-  isCorrect?: boolean;
-  score: number;
-  timeSpent?: number; // In seconds
-  submittedAt: string;
+  studentInfo: IStudentInfo;
+  answers: IResponseAnswer[];
+  startedAt: string;
+  submittedAt?: string;
+  totalTimeSpent: number;
+  totalScore: number;
+  maxScore: number;
+  percentage: number;
+  status: ResponseStatus;
+  ipAddress?: string;
+  userAgent?: string;
   createdAt: string;
   updatedAt: string;
 }
 
 export interface IStudentResponseCreate {
-  room: string;
-  question: string;
-  studentName: string;
-  studentAnswer: any;
-  timeSpent?: number;
+  roomId: string;
+  studentInfo: IStudentInfo;
+  ipAddress?: string;
+  userAgent?: string;
 }

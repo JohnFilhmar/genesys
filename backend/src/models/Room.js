@@ -75,11 +75,6 @@ const roomSchema = new mongoose.Schema(
     endDate: {
       type: Date,
     },
-    expiresAt: {
-      type: Date,
-      required: true,
-      index: { expires: 0 }, // TTL index - MongoDB will auto-delete expired documents
-    },
     // Statistics
     stats: {
       totalParticipants: {
@@ -117,15 +112,6 @@ roomSchema.statics.generateRoomCode = async function () {
 
   return code;
 };
-
-// Set expiry date automatically (24 hours from creation)
-roomSchema.pre('save', function (next) {
-  if (!this.expiresAt) {
-    const hoursToExpire = parseInt(process.env.ROOM_EXPIRY_HOURS) || 24;
-    this.expiresAt = new Date(Date.now() + hoursToExpire * 60 * 60 * 1000);
-  }
-  next();
-});
 
 // Indexes
 // roomSchema.index({ roomCode: 1 });

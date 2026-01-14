@@ -5,3 +5,4 @@
 export * from './useAuth';
 export * from './useQuestions';
 export * from './useRooms';
+export * from './useResponses';
