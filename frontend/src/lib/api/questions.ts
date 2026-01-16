@@ -17,7 +17,7 @@ export const getQuestions = async (filters?: IQuestionFilters): Promise<Question
   
   if (filters?.topic) params.append('topic', filters.topic);
   if (filters?.difficulty) params.append('difficulty', filters.difficulty);
-  if (filters?.type) params.append('type', filters.type);
+  if (filters?.type) params.append('questionType', filters.type);
   if (filters?.page) params.append('page', filters.page.toString());
   if (filters?.limit) params.append('limit', filters.limit.toString());
 

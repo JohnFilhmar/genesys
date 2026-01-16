@@ -7,27 +7,26 @@ import {
   Play, 
   Clock, 
   MoreVertical,
-  BarChart3
+  BarChart3,
+  Loader2
 } from "lucide-react";
+import { useRooms } from "@/hooks/useRooms";
+import { useQuestions } from "@/hooks/useQuestions";
 
 function Dashboard() {
+  // API Integration
+  const { data: roomsData, isLoading: loadingRooms, isError: errorRooms } = useRooms(1, 10);
+  const { data: questionsData, isLoading: loadingQuestions, isError: errorQuestions } = useQuestions({ limit: 3 });
 
-  // Mock Data
+  const allRooms = roomsData?.data || [];
+  const activeRooms = allRooms.filter(room => room.status === 'active');
+  const recentQuizzes = questionsData?.data || [];
+  const totalQuestions = questionsData?.pagination?.total || 0;
+
   const stats = [
-    { label: "Active Rooms", value: "2", icon: Play, color: "text-bio-500", bg: "bg-bio-100" },
-    { label: "Total Students", value: "142", icon: Users, color: "text-blue-500", bg: "bg-blue-100" },
-    { label: "Avg. Class Score", value: "86%", icon: BarChart3, color: "text-dna-500", bg: "bg-dna-100" },
-  ];
-
-  const activeRooms = [
-    { id: 1, code: "X7Y2Z9", name: "Genetics: Mitosis vs Meiosis", participants: 24, timeLeft: "02:15:00", status: "Live" },
-    { id: 2, code: "A1B2C3", name: "Evolutionary Adaptation", participants: 18, timeLeft: "06:30:00", status: "Waiting" },
-  ];
-
-  const recentQuizzes = [
-    { id: 1, title: "Cellular Respiration Mastery", questions: 15, difficulty: "Hard", created: "2 days ago" },
-    { id: 2, title: "Intro to Taxonomy", questions: 10, difficulty: "Medium", created: "5 days ago" },
-    { id: 3, title: "DNA Replication", questions: 20, difficulty: "Hard", created: "1 week ago" },
+    { label: "Active Rooms", value: activeRooms.length.toString(), icon: Play, color: "text-bio-500", bg: "bg-bio-100" },
+    { label: "Total Questions", value: totalQuestions.toString(), icon: Users, color: "text-blue-500", bg: "bg-blue-100" },
+    { label: "All Rooms", value: allRooms.length.toString(), icon: BarChart3, color: "text-dna-500", bg: "bg-dna-100" },
   ];
 
   return (
@@ -70,37 +69,40 @@ function Dashboard() {
             <Link href="/rooms" className="text-sm text-blue-600 font-medium hover:underline">View All</Link>
           </div>
 
-          {activeRooms.length > 0 ? (
+          {loadingRooms ? (
+            <div className="flex items-center justify-center py-12 bg-white rounded-2xl border border-slate-200">
+              <Loader2 className="w-8 h-8 text-bio-500 animate-spin" />
+              <span className="ml-3 text-slate-600">Loading rooms...</span>
+            </div>
+          ) : errorRooms ? (
+            <div className="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+              <p className="text-dna-600 font-medium">Failed to load rooms. Please try again.</p>
+            </div>
+          ) : activeRooms.length > 0 ? (
             <div className="space-y-4">
               {activeRooms.map((room) => (
-                <div key={room.id} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:border-blue-300 transition-colors">
+                <div key={room._id} className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:border-blue-300 transition-colors">
                   <div className="flex items-start gap-4">
                     <div className="bg-slate-900 text-white px-3 py-2 rounded-lg font-mono font-bold text-lg tracking-wider shrink-0">
-                      {room.code}
+                      {room.roomCode}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 truncate">{room.name}</h4>
+                      <h4 className="font-bold text-slate-900 truncate">{room.title}</h4>
                       <div className="flex flex-wrap items-center gap-3 md:gap-4 mt-1 text-sm text-slate-500">
                         <span className="flex items-center gap-1">
-                          <Users className="w-4 h-4" /> {room.participants} Joined
+                          <Users className="w-4 h-4" /> {room.stats.totalParticipants || 0} Joined
                         </span>
-                        <span className="flex items-center gap-1 text-orange-500">
-                          <Clock className="w-4 h-4" /> Expires in {room.timeLeft}
+                        <span className="flex items-center gap-1 text-blue-600">
+                          <Clock className="w-4 h-4" /> {room.settings.timeLimit ? `${room.settings.timeLimit} min` : 'No limit'}
                         </span>
                       </div>
                     </div>
                   </div>
                   <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto border-t sm:border-t-0 border-slate-100 pt-3 sm:pt-0">
-                    {room.status === 'Live' ? (
-                      <span className="flex items-center gap-1.5 px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full uppercase tracking-wide">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        Live
-                      </span>
-                    ) : (
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-bold rounded-full uppercase tracking-wide">
-                        Waiting
-                      </span>
-                    )}
+                    <span className="flex items-center gap-1.5 px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full uppercase tracking-wide">
+                      <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                      Active
+                    </span>
                     <button className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg">
                       <MoreVertical className="w-5 h-5" />
                     </button>
@@ -118,28 +120,45 @@ function Dashboard() {
         {/* 3. Recent Question Bank */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold text-slate-900">Recent Quizzes</h3>
+            <h3 className="text-lg font-bold text-slate-900">Recent Questions</h3>
             <Link href="/questions" className="text-sm text-blue-600 font-medium hover:underline">Library</Link>
           </div>
           
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            {recentQuizzes.map((quiz, i) => (
-              <div key={quiz.id} className={`p-4 hover:bg-slate-50 transition-colors cursor-pointer ${i !== recentQuizzes.length - 1 ? 'border-b border-slate-100' : ''}`}>
-                <h4 className="font-semibold text-slate-900 text-sm truncate">{quiz.title}</h4>
-                <div className="flex items-center gap-2 mt-2">
-                  <span className={`text-[10px] px-2 py-0.5 rounded border ${
-                    quiz.difficulty === 'Hard' ? 'bg-dna-50 text-dna-600 border-dna-100' : 'bg-blue-50 text-blue-600 border-blue-100'
-                  }`}>
-                    {quiz.difficulty}
-                  </span>
-                  <span className="text-xs text-slate-400">{quiz.questions} Qs • {quiz.created}</span>
+          {loadingQuestions ? (
+            <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center">
+              <Loader2 className="w-8 h-8 text-bio-500 animate-spin mx-auto" />
+              <p className="text-slate-600 mt-3">Loading questions...</p>
+            </div>
+          ) : errorQuestions ? (
+            <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center">
+              <p className="text-dna-600 font-medium">Failed to load questions.</p>
+            </div>
+          ) : recentQuizzes.length > 0 ? (
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+              {recentQuizzes.map((quiz, i) => (
+                <div key={quiz._id} className={`p-4 hover:bg-slate-50 transition-colors cursor-pointer ${i !== recentQuizzes.length - 1 ? 'border-b border-slate-100' : ''}`}>
+                  <h4 className="font-semibold text-slate-900 text-sm truncate">{quiz.questionText}</h4>
+                  <div className="flex items-center gap-2 mt-2">
+                    <span className={`text-[10px] px-2 py-0.5 rounded border ${
+                      quiz.difficulty === 'hard' ? 'bg-dna-50 text-dna-600 border-dna-100' : 
+                      quiz.difficulty === 'medium' ? 'bg-blue-50 text-blue-600 border-blue-100' :
+                      'bg-bio-50 text-bio-600 border-bio-100'
+                    }`}>
+                      {quiz.difficulty}
+                    </span>
+                    <span className="text-xs text-slate-400">{quiz.questionType} • {new Date(quiz.createdAt).toLocaleDateString()}</span>
+                  </div>
                 </div>
-              </div>
-            ))}
-            <button className="w-full py-3 text-sm text-slate-500 font-medium hover:bg-slate-50 border-t border-slate-100">
-              View All Quizzes
-            </button>
-          </div>
+              ))}
+              <Link href="/questions" className="w-full py-3 text-sm text-slate-500 font-medium hover:bg-slate-50 border-t border-slate-100 block text-center">
+                View All Questions
+              </Link>
+            </div>
+          ) : (
+            <div className="bg-white rounded-2xl border border-slate-200 p-8 text-center">
+              <p className="text-slate-500">No questions yet.</p>
+            </div>
+          )}
         </div>
 
       </div>

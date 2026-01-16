@@ -46,7 +46,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/join" className="text-slate-400 hover:text-bio-400 transition-colors">
+                <Link href="/room" className="text-slate-400 hover:text-bio-400 transition-colors">
                   Student Join
                 </Link>
               </li>
