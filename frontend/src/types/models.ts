@@ -85,16 +85,11 @@ export interface IQuestion {
   // For multiple-choice
   choices?: IMultipleChoiceOption[];
   
-  // For true-false
-  correctAnswer?: boolean;
+  // For true-false, fill-in-blank (array), essay/short-answer (string), or any mixed type
+  correctAnswer?: boolean | string | string[];
   
   // For matching
   pairs?: IMatchingPair[];
-  
-  // For fill-in-blank
-  correctAnswers?: string[];
-  
-  // For essay and short-answer (no specific fields)
   
   points: number;
   timeLimit?: number; // In seconds
@@ -108,9 +103,8 @@ export interface IQuestionCreate {
   difficulty: QuestionDifficulty;
   questionText: string;
   choices?: IMultipleChoiceOption[];
-  correctAnswer?: boolean;
+  correctAnswer?: boolean | string | string[];
   pairs?: IMatchingPair[];
-  correctAnswers?: string[];
   points: number;
 }
 

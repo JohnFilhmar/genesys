@@ -151,7 +151,7 @@ export default function RoomStudent({ roomId }: RoomStudentProps) {
       alert('Failed to submit quiz. Please try again.');
       setIsSubmitting(false);
     }
-  }, [responseId, questions, answeredQuestions.size, startTime, answers, submitResponseMutation, router]);
+  }, [responseId, questions, answeredQuestions.size, startTime, answers, submitResponseMutation]);
 
   const handleTimeUp = useCallback(() => {
     // Prevent multiple calls

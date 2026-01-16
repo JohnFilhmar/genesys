@@ -34,8 +34,10 @@ export const useCreateResponse = () => {
       });
     },
     onError: (error: unknown) => {
-      const message = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to join room';
-      console.error('Failed to create response:', message);
+      const axiosError = error as { response?: { data?: { message?: string; error?: string } } };
+      const message = axiosError?.response?.data?.message || axiosError?.response?.data?.error || 'Failed to join room';
+      console.error('Failed to create response:', { error, message });
+      throw error;
     },
   });
 };
@@ -66,8 +68,10 @@ export const useUpdateResponse = () => {
       );
     },
     onError: (error: unknown) => {
-      const message = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to update response';
-      console.error('Failed to update response:', message);
+      const axiosError = error as { response?: { data?: { message?: string; error?: string } } };
+      const message = axiosError?.response?.data?.message || axiosError?.response?.data?.error || 'Failed to update response';
+      console.error('Failed to update response:', { error, message });
+      throw error; // Re-throw to allow components to handle it
     },
   });
 };
@@ -105,8 +109,10 @@ export const useSubmitResponse = () => {
       console.log('Quiz submitted successfully!');
     },
     onError: (error: unknown) => {
-      const message = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to submit quiz';
-      console.error('Failed to submit quiz:', message);
+      const axiosError = error as { response?: { data?: { message?: string; error?: string } } };
+      const message = axiosError?.response?.data?.message || axiosError?.response?.data?.error || 'Failed to submit quiz';
+      console.error('Failed to submit quiz:', { error, message });
+      throw error; // Re-throw to allow components to handle it
     },
   });
 };
@@ -159,8 +165,10 @@ export const useDeleteResponse = () => {
       console.log('Response deleted successfully');
     },
     onError: (error: unknown) => {
-      const message = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to delete response';
-      console.error('Failed to delete response:', message);
+      const axiosError = error as { response?: { data?: { message?: string; error?: string } } };
+      const message = axiosError?.response?.data?.message || axiosError?.response?.data?.error || 'Failed to delete response';
+      console.error('Failed to delete response:', { error, message });
+      throw error;
     },
   });
 };
@@ -196,8 +204,10 @@ export const useGradeResponse = () => {
       console.log('Response graded successfully');
     },
     onError: (error: unknown) => {
-      const message = (error as { response?: { data?: { message?: string } } })?.response?.data?.message || 'Failed to grade response';
-      console.error('Failed to grade response:', message);
+      const axiosError = error as { response?: { data?: { message?: string; error?: string } } };
+      const message = axiosError?.response?.data?.message || axiosError?.response?.data?.error || 'Failed to grade response';
+      console.error('Failed to grade response:', { error, message });
+      throw error;
     },
   });
 };
