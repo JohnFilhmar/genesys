@@ -34,7 +34,9 @@ export default function CreateQuestionForm({ open, onOpenChange, editMode = fals
 
   // Type-specific state
   const [choices, setChoices] = useState(initialData?.choices || [{ text: '', isCorrect: false }]);
-  const [correctAnswer, setCorrectAnswer] = useState<boolean>(initialData?.correctAnswer ?? true);
+  const [correctAnswer, setCorrectAnswer] = useState<boolean>(
+    (initialData && typeof initialData.correctAnswer === 'boolean') ? initialData.correctAnswer : true
+  );
   const [pairs, setPairs] = useState(initialData?.pairs || [{ left: '', right: '' }]);
   const [correctAnswers, setCorrectAnswers] = useState<string[]>(initialData?.correctAnswers || ['']);
 
