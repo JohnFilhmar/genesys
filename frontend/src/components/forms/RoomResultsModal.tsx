@@ -1,8 +1,9 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import { useRoomResponses } from '@/hooks/useResponses';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { IRoom } from '@/types/models';
+import { IQuestion, IRoom, QuestionType } from '@/types/models';
 import { 
   Users, 
   CheckCircle2, 
@@ -12,8 +13,12 @@ import {
   Loader2,
   Award,
   Timer,
-  AlertCircle
+  AlertCircle,
+  Edit3,
+  CheckCheck
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import GradeResponseModal from './GradeResponseModal';
 
 // Helper function to format time ago
 const formatTimeAgo = (date: Date | string): string => {
@@ -37,15 +42,50 @@ interface RoomResultsModalProps {
 }
 
 export default function RoomResultsModal({ open, onOpenChange, room }: RoomResultsModalProps) {
+  const [showGradingModal, setShowGradingModal] = useState(false);
+  const [selectedResponseIndex, setSelectedResponseIndex] = useState(0);
+
   const { data: responsesData, isLoading, isError } = useRoomResponses({ 
     roomId: room?._id || '',
     enabled: open && !!room?._id
   });
 
+  const stats = responsesData?.stats;
+  const responses = useMemo(() => responsesData?.data || [], [responsesData?.data]);
+
+  // Check if room has essay or short answer questions
+  const hasManualGradingQuestions = useMemo(() => {
+    if (!room?.questions) return false;
+    const questions = Array.isArray(room.questions) ? room.questions : [];
+    // Check if questions are populated (objects) rather than just IDs (strings)
+    if (questions.length === 0 || typeof questions[0] === 'string') return false;
+    return (questions as IQuestion[]).some(
+      (q) => 
+        q.questionType === QuestionType.ESSAY || 
+        q.questionType === QuestionType.SHORT_ANSWER
+    );
+  }, [room]);
+
+  // Filter and sort submitted responses to match display order
+  const submittedResponses = useMemo(() => {
+    return responses
+      .filter(r => r.status === 'submitted' || r.status === 'reviewed')
+      .sort((a, b) => {
+        // Match the sorting in the display: highest percentage first
+        if (b.percentage !== a.percentage) {
+          return b.percentage - a.percentage;
+        }
+        // Tie-breaker: fastest time first
+        return a.totalTimeSpent - b.totalTimeSpent;
+      });
+  }, [responses]);
+
   if (!room) return null;
 
-  const stats = responsesData?.stats;
-  const responses = responsesData?.data || [];
+  const handleOpenGrading = (responseIndex: number) => {
+    setSelectedResponseIndex(responseIndex);
+    setShowGradingModal(true);
+  };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -254,6 +294,32 @@ export default function RoomResultsModal({ open, onOpenChange, room }: RoomResul
                                       {formatTimeAgo(response.submittedAt)}
                                     </div>
                                   )}
+                                  {hasManualGradingQuestions && (
+                                    <Button
+                                      variant="outline"
+                                      size="sm"
+                                      onClick={() => {
+                                        // Find the index in submittedResponses array
+                                        const submittedIndex = submittedResponses.findIndex(r => r._id === response._id);
+                                        if (submittedIndex !== -1) {
+                                          handleOpenGrading(submittedIndex);
+                                        }
+                                      }}
+                                      className="ml-2 gap-2"
+                                    >
+                                      {response.status === 'reviewed' ? (
+                                        <>
+                                          <CheckCheck className="w-4 h-4 text-green-600" />
+                                          <span>Reviewed</span>
+                                        </>
+                                      ) : (
+                                        <>
+                                          <Edit3 className="w-4 h-4" />
+                                          <span>Grade</span>
+                                        </>
+                                      )}
+                                    </Button>
+                                  )}
                                 </>
                               ) : (
                                 <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 bg-linear-to-br from-yellow-50 to-yellow-100 text-yellow-700 rounded-xl font-bold border border-yellow-200">
@@ -273,6 +339,18 @@ export default function RoomResultsModal({ open, onOpenChange, room }: RoomResul
           )}
         </div>
       </DialogContent>
+
+      {/* Grading Modal */}
+      {hasManualGradingQuestions && submittedResponses.length > 0 && (
+        <GradeResponseModal
+          key={selectedResponseIndex}
+          open={showGradingModal}
+          onOpenChange={setShowGradingModal}
+          responses={submittedResponses}
+          room={room}
+          initialResponseIndex={selectedResponseIndex}
+        />
+      )}
     </Dialog>
   );
 }

@@ -38,7 +38,9 @@ export default function CreateQuestionForm({ open, onOpenChange, editMode = fals
     (initialData && typeof initialData.correctAnswer === 'boolean') ? initialData.correctAnswer : true
   );
   const [pairs, setPairs] = useState(initialData?.pairs || [{ left: '', right: '' }]);
-  const [correctAnswers, setCorrectAnswers] = useState<string[]>(initialData?.correctAnswers || ['']);
+  const [correctAnswers, setCorrectAnswers] = useState<string[]>(
+    Array.isArray(initialData?.correctAnswer) ? initialData.correctAnswer : [''] 
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,11 +57,11 @@ export default function CreateQuestionForm({ open, onOpenChange, editMode = fals
     if (questionType === QuestionType.MULTIPLE_CHOICE) {
       baseData.choices = choices;
     } else if (questionType === QuestionType.TRUE_FALSE) {
-      baseData.correctAnswer = correctAnswer;
+      baseData.correctAnswer = correctAnswer as boolean;
     } else if (questionType === QuestionType.MATCHING) {
       baseData.pairs = pairs;
     } else if (questionType === QuestionType.FILL_IN_BLANK) {
-      baseData.correctAnswers = correctAnswers;
+      baseData.correctAnswer = correctAnswers;
     }
 
     try {

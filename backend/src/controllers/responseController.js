@@ -231,16 +231,18 @@ exports.submitResponse = async (req, res) => {
 
         case 'fill-in-the-blank':
           // Check if all blanks are filled correctly (case-insensitive)
-          if (Array.isArray(answer.answer) && Array.isArray(question.correctAnswers)) {
+          // correctAnswer should be an array for fill-in-the-blank
+          const correctAnswersArray = Array.isArray(question.correctAnswer) ? question.correctAnswer : [];
+          if (Array.isArray(answer.answer) && correctAnswersArray.length > 0) {
             const correctBlanks = answer.answer.every((studentAnswer, index) => {
-              const correctAnswer = question.correctAnswers[index];
+              const correctAnswer = correctAnswersArray[index];
               return (
                 studentAnswer &&
                 correctAnswer &&
                 studentAnswer.toLowerCase().trim() === correctAnswer.toLowerCase().trim()
               );
             });
-            isCorrect = correctBlanks && answer.answer.length === question.correctAnswers.length;
+            isCorrect = correctBlanks && answer.answer.length === correctAnswersArray.length;
             pointsEarned = isCorrect ? question.points : 0;
           }
           break;

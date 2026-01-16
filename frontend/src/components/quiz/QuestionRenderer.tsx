@@ -178,8 +178,16 @@ export default function QuestionRenderer({
   };
 
   const renderFillInBlank = () => {
-    if (!question.correctAnswers || question.correctAnswers.length === 0) {
-      return <p className="text-slate-500">No blanks to fill</p>;
+    // correctAnswer should be an array of strings for fill-in-the-blank
+    const correctAnswersArray = Array.isArray(question.correctAnswer) ? question.correctAnswer : [];
+    
+    if (correctAnswersArray.length === 0) {
+      return (
+        <div className="text-center py-8">
+          <p className="text-slate-500">No blanks to fill</p>
+          <p className="text-xs text-slate-400 mt-2">This question needs to be configured with blank answers by the teacher.</p>
+        </div>
+      );
     }
 
     const currentAnswers = Array.isArray(localAnswer) ? localAnswer : [];
@@ -195,7 +203,7 @@ export default function QuestionRenderer({
         <p className="text-sm text-slate-600 mb-4">
           Fill in the blanks below:
         </p>
-        {question.correctAnswers.map((_, index) => (
+        {correctAnswersArray.map((_, index) => (
           <div key={index}>
             <label className="block text-sm font-medium text-slate-700 mb-2">
               Blank {index + 1}
